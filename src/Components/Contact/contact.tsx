@@ -3,19 +3,14 @@ import {
 	Button,
 	FormControl,
 	FormErrorMessage,
-	FormHelperText,
 	FormLabel,
 	Input,
 	Link,
-	Radio,
-	RadioGroup,
 	Select,
-	Stack,
 	Text,
 	Textarea,
-	useRadioGroup,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface IContactForm {
 	name: string;
@@ -53,17 +48,17 @@ export default function Contact() {
 	const dynamicLink = `https://api.whatsapp.com/send?phone=+330749303048&text=Olá%2C vim pelo seu site e estou interessado no curso de química.%0AMe chamo ${
 		input?.name
 	}.${!!input?.msg ? `%0A%0A${encodeURI(input.msg)}%0A` : ""}${
-		!!input?.plan ? `%0AGostaria de fazer o curso de ${input?.plan}` : ""
+		!!input?.plan ? `%0AGostaria de fazer o curso para ${input?.plan}` : ""
 	}`;
 
 	function handleSendMsg() {
-		if (input?.name?.length < 3) return;
+		if (input?.name?.length <= 3) return;
 		window.open(dynamicLink, "_blank");
 	}
 
 	return (
-		<Box height="50vh" marginBottom="50px">
-			<Box bg="brand.100" textAlign="center" padding="12px 0" marginBottom="24px">
+		<Box minHeight="50vh" id="contato" margin="32px 0">
+			<Box bg="brand.100" textAlign="center" padding="12px 0" marginBottom="32px">
 				<Text as="h2" textAlign="center" fontSize="3xl" color="brand.400">
 					Fale comigo
 				</Text>
@@ -82,7 +77,7 @@ export default function Contact() {
 					</Link>
 				</Text>
 			</Box>
-			<Box display="flex" alignItems="center" justifyContent="center">
+			<Box display="flex" alignItems="center" justifyContent="center" padding="0 12px">
 				<Box width="500px">
 					<FormControl isInvalid={isError?.name} isRequired>
 						<FormLabel htmlFor="name">Nome</FormLabel>

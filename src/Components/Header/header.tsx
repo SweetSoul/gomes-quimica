@@ -1,5 +1,7 @@
 import { Link } from "@chakra-ui/react";
+import DrawerMenu from "../Drawer/drawer";
 import styles from "./header.module.sass";
+import MenuLinks from "./links";
 
 export default function Header() {
 	return (
@@ -9,19 +11,9 @@ export default function Header() {
 					<img src="/Media/logo-stacked.png" alt="logo" />
 				</div>
 				<nav className={styles.navMenu}>
-					<Link color="brand.100" className={styles.navLink} href="#home">
-						Home
-					</Link>
-					<Link color="brand.100" className={styles.navLink} href="#planos">
-						Planos
-					</Link>
-					<Link color="brand.100" className={styles.navLink} href="#sobre">
-						Prof. Marco Gomes
-					</Link>
-					<Link color="brand.100" className={styles.navLink} href="#contato">
-						Contato
-					</Link>
+					<MenuLinks />
 				</nav>
+				<DrawerMenu />
 			</div>
 		</header>
 	);

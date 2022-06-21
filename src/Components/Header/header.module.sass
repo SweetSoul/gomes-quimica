@@ -4,6 +4,7 @@
     justify-content: space-between
     padding: 16px 24px
     border-bottom: 1px solid rgba(0,0,0,0.1)
+    position: relative
 
 .logoContainer
     width: 50px
@@ -11,8 +12,10 @@
         width: 100%
 
 .navMenu
-    display: flex
+    display: none
     gap: 24px
+    @media (min-width: 48em)
+        display: flex
 
 .navLink
     font-size: 18px

@@ -5,18 +5,19 @@ export default function About() {
 	return (
 		<>
 			<Box
-				height="50vh"
+				margin="32px 0"
 				display="flex"
 				flexFlow="column"
 				justifyContent="center"
 				alignItems="center"
 				padding="0 24px"
+				id="sobre"
 			>
 				<Text as="h2" fontSize="2xl" color="brand.100">
 					Prof. Marco Gomes
 				</Text>
 				<hr className="divider" />
-				<Text textAlign="center" fontSize="18px" color="brand.100">
+				<Text textAlign={{ base: "justify", md: "center" }} fontSize="18px" color="brand.100">
 					Possui curso técnico em Análises e Processos Químicos pelo Instituto Federal de Educação, Ciência e
 					Tecnologia Fluminense (2003-2005); na Universidade Estadual do Norte Fluminense realizou a graduação
 					em Licenciatura em Química no período de (2007-2011), Mestrado em Ciências Naturais com ênfase em

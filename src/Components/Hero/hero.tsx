@@ -1,24 +1,31 @@
 import Lottie from "react-lottie-player";
-import styles from "./hero.module.sass";
 import { Box, Text } from "@chakra-ui/react";
 import chemAnimation from "./chem-exam.json";
 
 export default function Hero() {
 	return (
 		<>
-			<div className={styles.container}>
-				<Box textAlign="center">
-					<Text as="h1" fontSize="4xl" color="brand.100" className={styles.heroTitle}>
+			<Box
+				id="home"
+				display="flex"
+				alignItems="center"
+				justifyContent="space-evenly"
+				height="calc(100vh - 95px)"
+				padding="0 24px"
+				flexWrap={{ base: "wrap" }}
+			>
+				<Box textAlign="center" flex={{ base: "0 0 100%", md: "0 0 auto" }}>
+					<Text as="h1" fontSize="4xl" color="brand.100" fontWeight="700">
 						Química descomplicada
 					</Text>
 					<Text fontSize="2xl" color="brand.100">
-						Aprenda a fazer exercícios e seguir o curso de forma rápida e eficiente.
+						Aprenda o conteúdo de forma rápida e eficiente.
 					</Text>
 				</Box>
-				<div className={styles.lottieContainer}>
+				<Box w="min(900px, 95vw)" filter="hue-rotate(100deg)" flex={{ base: "0 0 100%", md: "0 0 auto" }}>
 					<Lottie animationData={chemAnimation} loop play />
-				</div>
-			</div>
+				</Box>
+			</Box>
 		</>
 	);
 }
