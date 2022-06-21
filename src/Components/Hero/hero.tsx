@@ -13,6 +13,7 @@ export default function Hero() {
 				height="calc(100vh - 95px)"
 				padding="0 24px"
 				flexWrap={{ base: "wrap" }}
+				minHeight="90vh"
 			>
 				<Box textAlign="center" flex={{ base: "0 0 100%", md: "0 0 auto" }}>
 					<Text as="h1" fontSize="4xl" color="brand.100" fontWeight="700">
@@ -23,7 +24,7 @@ export default function Hero() {
 					</Text>
 				</Box>
 				<Box w="min(900px, 95vw)" filter="hue-rotate(100deg)" flex={{ base: "0 0 100%", md: "0 0 auto" }}>
-					<Lottie animationData={chemAnimation} loop play />
+					<Lottie animationData={chemAnimation} loop play className="lottieContainer" />
 				</Box>
 			</Box>
 		</>
